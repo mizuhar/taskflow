@@ -1,12 +1,16 @@
-function App() {
+import { Routes, Route } from "react-router-dom";
 
-  
+import Home from "./pages/Home";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
+
+function App() {
   return (
-    <>
-     <h1>TaskFlow</h1>
-    <h2>Hello World!</h2>
-    </>
-   
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/register" element={<Register />} />
+    </Routes>
   );
 }
 
