@@ -8,6 +8,7 @@ import Dashboard from "./pages/Dashboard";
 import Profile from "./pages/Profile";
 import Tasks from "./pages/Tasks";
 import Logout from "./pages/Logout";
+import WelcomeCard from "./components/dashboard/WelcomeCard";
 
 function App() {
   return (

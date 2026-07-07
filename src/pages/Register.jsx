@@ -1,7 +1,9 @@
 import { useState } from "react";
 import { register } from "../services/firebase";
+import { useNavigate } from "react-router-dom";
 
 function Register() {
+  const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -10,7 +12,7 @@ function Register() {
 
     try {
       const userCredential = await register(email, password);
-      console.log("Registered user:", userCredential.user);
+      navigate("/dashboard");
     } catch (error) {
       console.error("Register error:", error.message);
     }
