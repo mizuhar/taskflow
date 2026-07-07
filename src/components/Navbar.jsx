@@ -1,15 +1,23 @@
 import { NavLink } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
+import { useNavigate } from "react-router-dom";
 import styles from "./Navbar.module.css";
 
 function Navbar() {
-    const isLoggedIn = false;
+    const navigate = useNavigate();
+
+const handleLogout = async () => {
+  await logout();
+  navigate("/");
+};
+    const { currentUser, logout } = useAuth();
   return (
     <nav className={styles.navbar}>
       <NavLink to="/" className={styles.logo}>
         TaskFlow
       </NavLink>
 
-      {isLoggedIn ? (
+      {currentUser ? (
   <div className={styles.links}>
     <NavLink to="/dashboard" className={({ isActive }) => isActive ? styles.active : styles.link}>
       Dashboard
@@ -20,9 +28,9 @@ function Navbar() {
     <NavLink to="/profile" className={({ isActive }) => isActive ? styles.active : styles.link}>
       Profile
     </NavLink>
-    <NavLink to="/logout" className={({ isActive }) => isActive ? styles.active : styles.link}>
+    <button onClick={handleLogout} to="#" className={styles.logoutButton}>
       Logout
-    </NavLink>
+    </button>
   </div>
 ) : (
   <div className={styles.links}>

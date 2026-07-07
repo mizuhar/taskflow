@@ -7,8 +7,6 @@ import Register from "./pages/Register";
 import Dashboard from "./pages/Dashboard";
 import Profile from "./pages/Profile";
 import Tasks from "./pages/Tasks";
-import Logout from "./pages/Logout";
-import WelcomeCard from "./components/dashboard/WelcomeCard";
 
 function App() {
   return (
@@ -18,7 +16,6 @@ function App() {
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/tasks" element={<Tasks />} />
-        <Route path="/logout" element={<Logout />} />
 
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
