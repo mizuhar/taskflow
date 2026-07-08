@@ -1,8 +1,9 @@
 import { useState } from "react";
-import { register } from "../services/firebase";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
 
 function Register() {
+  const {register} = useAuth()
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
