@@ -4,7 +4,6 @@ import { useAuth } from "../context/AuthContext";
 import WelcomeCard from "../components/dashboard/WelcomeCard";
 import StatsCard from "../components/dashboard/StatsCard";
 import EmptyState from "../components/dashboard/EmptyState";
-import TaskForm from "../components/tasks/TaskForm";
 
 
 function Dashboard() {
@@ -19,7 +18,6 @@ function Dashboard() {
   
 
   <WelcomeCard />
-   <TaskForm />
   <StatsCard />
   {/* <EmptyState /> */}
 </main>

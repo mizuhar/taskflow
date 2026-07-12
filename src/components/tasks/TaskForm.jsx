@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { addTask } from "../../services/taskService";
 import { useAuth } from "../../context/AuthContext";
+import styles from "./TaskForm.module.css";
 
 function TaskForm() {
   const [title, setTitle] = useState("");
@@ -39,20 +40,29 @@ function TaskForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input
-        type="text"
-        value={title}
-        onChange={(event) => setTitle(event.target.value)}
-        placeholder="Enter a task"
-      />
+    <section className={styles.card}>
+      <h2>Add a new task</h2>
 
-      <button type="submit" disabled={submitting}>
-        {submitting ? "Adding..." : "Add Task"}
-      </button>
+      <form onSubmit={handleSubmit} className={styles.form}>
+        <input
+          type="text"
+          value={title}
+          onChange={(event) => setTitle(event.target.value)}
+          placeholder="What needs to be done?"
+          className={styles.input}
+        />
 
-      {error && <p>{error}</p>}
-    </form>
+        <button
+          type="submit"
+          disabled={submitting}
+          className={styles.button}
+        >
+          {submitting ? "Adding..." : "Add Task"}
+        </button>
+      </form>
+
+      {error && <p className={styles.error}>{error}</p>}
+    </section>
   );
 }
 
