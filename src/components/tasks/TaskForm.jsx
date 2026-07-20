@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { addTask } from "../../services/taskService";
 import { useAuth } from "../../context/AuthContext";
+import { useToast } from "../../context/ToastContext"; // Импортираме контекста за Toast известия
 import styles from "./TaskForm.module.css";
 
 function TaskForm() {
@@ -9,6 +10,7 @@ function TaskForm() {
   const [submitting, setSubmitting] = useState(false);
 
   const { currentUser } = useAuth();
+  const { addToast } = useToast(); // Използваме контекста за Toast известия
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -29,9 +31,11 @@ function TaskForm() {
         completed: false,
         userId: currentUser.uid,
       });
+      addToast("Task added successfully!", "success"); // Показваме успешно известие
 
       setTitle("");
     } catch (error) {
+      addToast("Failed to add task. Please try again.", "error"); // Показваме грешка като известие
       console.error("Failed to add task:", error);
       setError("Could not add the task. Please try again.");
     } finally {
