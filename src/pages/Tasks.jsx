@@ -2,7 +2,12 @@ import { useEffect, useState } from "react";
 import { useAuth } from "../context/AuthContext";
 import { useToast } from "../context/ToastContext"; // Добавяме Toast контекста
 
-import { subscribeToTasks, deleteTask, toggleTaskStatus, updateTaskTitle } from "../services/taskService";
+import {
+  subscribeToTasks,
+  deleteTask,
+  toggleTaskStatus,
+  updateTaskTitle,
+} from "../services/taskService";
 
 import TaskForm from "../components/tasks/TaskForm";
 import TaskList from "../components/tasks/TaskList";
@@ -19,10 +24,7 @@ function Tasks() {
       return;
     }
 
-    const unsubscribe = subscribeToTasks(
-      currentUser.uid,
-      setTasks
-    );
+    const unsubscribe = subscribeToTasks(currentUser.uid, setTasks);
 
     return unsubscribe;
   }, [currentUser]);
@@ -50,28 +52,31 @@ function Tasks() {
   };
 
   const handleUpdateTaskTitle = async (taskId, newTitle) => {
-  try {
-    await updateTaskTitle(taskId, newTitle);
-    addToast("Task updated successfully!", "success");
-  } catch (error) {
-    console.error(error);
-    addToast("Failed to update task", "error");
-  }
-};
+    try {
+      await updateTaskTitle(taskId, newTitle);
+      addToast("Task updated successfully!", "success");
+    } catch (error) {
+      console.error(error);
+      addToast("Failed to update task", "error");
+    }
+  };
 
   return (
     <main className={styles.container}>
-      <div>
-        <p>Task Management</p>
+      <header className={styles.header}>
+        <p className={styles.subtitle}>Task Management</p>
         <h1>My Tasks</h1>
-        <p>Create and organize your daily tasks.</p>
-      </div>
+        <p className={styles.description}>
+          Create and organize your daily tasks.
+        </p>
+      </header>
+     
 
       <TaskForm />
-      <TaskList 
-        tasks={tasks} 
-        onToggleTask={handleToggleTask} 
-        onDeleteTask={handleDeleteTask} 
+      <TaskList
+        tasks={tasks}
+        onToggleTask={handleToggleTask}
+        onDeleteTask={handleDeleteTask}
         onUpdateTaskTitle={handleUpdateTaskTitle}
       />
     </main>

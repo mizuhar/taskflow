@@ -1,5 +1,33 @@
+/* Tasks.module.css */
+
 .container {
-  max-width: 1100px;
+  max-width: 1000px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 2.5rem 1.5rem;
+}
+
+.header {
+  margin-bottom: 2rem;
+}
+
+.subtitle {
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #6366f1;
+  margin-bottom: 0.25rem;
+}
+
+.header h1 {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0;
+}
+
+.description {
+  color: #64748b;
+  font-size: 1rem;
+  margin-top: 0.5rem;
 }

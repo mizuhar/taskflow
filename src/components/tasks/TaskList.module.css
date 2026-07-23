@@ -1,9 +1,19 @@
+/* TaskList.module.css */
+
 .card {
   background: #ffffff;
-  padding: 24px;
-  border-radius: 12px;
+  padding: 28px;
+  border-radius: 16px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(226, 232, 240, 0.8);
   margin-top: 24px;
+}
+
+.card h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 1rem;
 }
 
 .list {
@@ -15,60 +25,111 @@
   gap: 12px;
 }
 
+/* Единична картичка за задача */
 .item {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 12px 16px;
+  padding: 14px 18px;
   border: 1px solid #e2e8f0;
-  border-radius: 8px;
-  transition: all 0.2s ease;
-  background-color: #fff;
+  border-radius: 12px;
+  transition: all 0.25s ease;
+  background-color: #ffffff;
 }
 
 .item:hover {
   border-color: #cbd5e1;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transform: translateY(-1px);
 }
 
-.taskLabel {
+.leftGroup {
   display: flex;
   align-items: center;
-  gap: 12px;
-  cursor: pointer;
+  gap: 14px;
   flex: 1;
 }
 
+/* Свеж Чекбокс */
 .checkbox {
-  width: 18px;
-  height: 18px;
+  width: 20px;
+  height: 20px;
   cursor: pointer;
-  accent-color: #0f172a; /* Цветът на чекбокса съвпада с тъмната тема */
+  accent-color: #6366f1; /* Синхрон с лилаво/индиго акцента от Dashboard */
+  border-radius: 6px;
+  transition: transform 0.15s ease;
 }
 
+.checkbox:active {
+  transform: scale(0.9);
+}
+
+/* Заглавие на задачата */
 .title {
   font-size: 1rem;
+  font-weight: 500;
   color: #1e293b;
-  transition: all 0.2s ease;
+  transition: color 0.2s ease, text-decoration 0.2s ease;
+}
+
+/* Поле за бързо редактиране (Input) */
+.editInput {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #0f172a;
+  border: 1.5px solid #6366f1;
+  border-radius: 8px;
+  padding: 4px 10px;
+  outline: none;
+  width: 80%;
+  background-color: #f8fafc;
 }
 
 /* Стил за завършена задача */
+.completed {
+  background-color: #f8fafc;
+  border-color: #f1f5f9;
+}
+
 .completed .title {
   text-decoration: line-through;
   color: #94a3b8;
 }
 
-/* Бутон за изтриване */
+/* Бутони за действие */
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.editBtn,
 .deleteBtn {
   background: transparent;
   border: none;
-  color: #94a3b8;
-  font-size: 1.1rem;
-  font-weight: bold;
+  font-size: 0.95rem;
   cursor: pointer;
-  padding: 4px 8px;
-  border-radius: 4px;
+  padding: 6px 10px;
+  border-radius: 8px;
   transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Моливче */
+.editBtn {
+  color: #64748b;
+}
+
+.editBtn:hover {
+  color: #6366f1;
+  background-color: #eef2e1 ;
+}
+
+/* Изтриване */
+.deleteBtn {
+  color: #94a3b8;
 }
 
 .deleteBtn:hover {
@@ -79,4 +140,5 @@
 .empty {
   color: #64748b;
   font-style: italic;
+  padding: 12px 0;
 }

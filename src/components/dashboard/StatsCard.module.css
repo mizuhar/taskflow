@@ -1,0 +1,89 @@
+/* StatsCard.module.css */
+
+.statsContainer {
+  margin-top: 2rem;
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+}
+
+.cardHeader h3 {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #64748b; /* Модерен slate сиво-син цвят */
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 0;
+}
+
+.icon {
+  font-size: 1.25rem;
+  background: #f1f5f9;
+  padding: 0.4rem 0.6rem;
+  border-radius: 10px;
+}
+
+.number {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0;
+  line-height: 1;
+}
+
+/* Цветови акценти за различните метрики */
+.completed {
+  color: #10b981; /* Свежо смарагдово зелено */
+}
+
+.inProgress {
+  color: #f59e0b; /* Топло кехлибарено оранжево */
+}
+
+.percentage {
+  color: #6366f1; /* Елегантно индиго/виолетово */
+}
+
+/* Прогрес бар за последната картичка */
+.progressBarBg {
+  width: 100%;
+  height: 8px;
+  background-color: #e2e8f0;
+  border-radius: 999px;
+  margin-top: 1rem;
+  overflow: hidden;
+}
+
+.progressBarFill {
+  height: 100%;
+  background: linear-gradient(90deg, #6366f1 0%, #8b5cf6 100%);
+  border-radius: 999px;
+  transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
