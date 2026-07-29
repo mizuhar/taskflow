@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import {useNavigate} from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import { subscribeToTasks } from "../services/taskService";
 import styles from "./Profile.module.css";
@@ -6,6 +7,7 @@ import styles from "./Profile.module.css";
 function Profile() {
   const { currentUser, logout } = useAuth();
   const [taskStats, setTaskStats] = useState({ total: 0, completed: 0 });
+  const navigate = useNavigate();
 
   // Вземаме заглавната буква от имейла за аватара
   const userInitial = currentUser?.email ? currentUser.email[0].toUpperCase() : "U";
@@ -32,6 +34,15 @@ function Profile() {
 
     return () => unsubscribe();
   }, [currentUser]);
+
+   async function handleLogout() {
+    try {
+      await logout();
+      navigate('/login');
+    } catch (error) {
+      console.error('Грешка при изход:', error.message);
+    }
+  }
 
   return (
     <main className={styles.container}>
@@ -86,7 +97,7 @@ function Profile() {
 
         {/* Бутон за изход */}
         <div className={styles.actions}>
-          <button onClick={logout} className={styles.logoutBtn}>
+          <button onClick={handleLogout} className={styles.logoutBtn}>
             Log Out
           </button>
         </div>
