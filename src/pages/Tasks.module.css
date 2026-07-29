@@ -31,6 +31,7 @@
   font-size: 1rem;
   margin-top: 0.5rem;
 }
+
 .controlsBar {
   display: flex;
   justify-content: space-between;
@@ -48,11 +49,12 @@
   border-radius: 10px;
   font-size: 0.95rem;
   outline: none;
-  transition: border-color 0.2s ease;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .searchInput:focus {
   border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
 }
 
 .filterGroup {
@@ -83,4 +85,36 @@
   background: #ffffff;
   color: #6366f1;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+/* 📱 Responsive за мобилни екрани (< 768px) */
+@media (max-width: 768px) {
+  .container {
+    padding: 1.5rem 1rem;
+  }
+
+  .header h1 {
+    font-size: 1.75rem;
+  }
+
+  .controlsBar {
+    flex-direction: column;
+    align-items: stretch; /* Разпъва търсачката и филтрите на 100% ширина */
+    gap: 0.75rem;
+  }
+
+  .searchInput {
+    width: 100%;
+  }
+
+  .filterGroup {
+    width: 100%;
+    justify-content: space-between; /* Бутоните заема цялата ширина равномерно */
+  }
+
+  .filterBtn {
+    flex: 1;
+    text-align: center;
+    padding: 8px 10px; /* Малко по-удобни за натискане с пръст */
+  }
 }

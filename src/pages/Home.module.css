@@ -1,0 +1,150 @@
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  box-sizing: border-box;
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  max-width: 750px;
+  margin: 0 auto;
+  padding: 40px 0 20px 0;
+}
+
+.title {
+  font-size: 2.8rem;
+  font-weight: 800;
+  line-height: 1.2;
+  color: #1e293b;
+  margin-bottom: 20px;
+}
+
+.highlight {
+  color: #2563eb; /* Твоето основно синьо */
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: #64748b;
+  line-height: 1.6;
+  margin-bottom: 32px;
+}
+
+.actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  align-items: center;
+}
+
+.btnPrimary {
+  background-color: #2563eb;
+  color: #ffffff;
+  padding: 12px 28px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.2s ease;
+}
+
+.btnPrimary:hover {
+  background-color: #1d4ed8;
+}
+
+.btnSecondary {
+  background-color: #f1f5f9;
+  color: #334155;
+  padding: 12px 28px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.2s ease;
+}
+
+.btnSecondary:hover {
+  background-color: #e2e8f0;
+}
+
+/* Features Cards Section */
+.features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 24px;
+  text-align: left;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.icon {
+  font-size: 2rem;
+  margin-bottom: 12px;
+}
+
+.card h3 {
+  font-size: 1.25rem;
+  color: #0f172a;
+  margin-bottom: 8px;
+}
+
+.card p {
+  color: #64748b;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* 📱 Фикс за Мобилна Версия (< 768px) */
+@media (max-width: 768px) {
+  .container {
+    padding: 24px 16px; /* По-малко отстояние от ръбовете */
+    gap: 40px;
+  }
+
+  .title {
+    font-size: 1.85rem;
+    line-height: 1.25;
+  }
+
+  .subtitle {
+    font-size: 0.95rem;
+    padding: 0 8px;
+  }
+
+  .actions {
+    flex-direction: column;
+    width: 100%;
+    align-items: center; /* Центрира бутоните */
+    gap: 12px;
+  }
+
+  .btnPrimary, 
+  .btnSecondary {
+    width: 100%;
+    max-width: 320px; /* 💡 Не позволява на синия бутон да се "разлее" по целия екран */
+    text-align: center;
+    padding: 14px 20px;
+    font-size: 0.95rem;
+    border-radius: 10px;
+  }
+
+  .features {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}

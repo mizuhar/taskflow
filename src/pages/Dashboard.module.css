@@ -3,6 +3,7 @@
   margin: 0 auto;
   padding: 2rem;
 }
+
 .recentSection {
   margin-top: 2.5rem;
   background: #ffffff;
@@ -27,16 +28,23 @@
 .recentItem {
   display: flex;
   align-items: center;
+  justify-content: space-between; /* 💡 Държи заглавието отляво, а статуса вдясно */
   gap: 1rem;
   padding: 0.75rem 1rem;
   background: #f8fafc;
   border-radius: 10px;
+  transition: background-color 0.2s ease;
+}
+
+.recentItem:hover {
+  background: #f1f5f9; /* 💡 Нежен ховър ефект */
 }
 
 .taskTitle {
   margin: 0;
   font-weight: 500;
   color: #334155;
+  word-break: break-word; /* 💡 Предпазва от счупване при много дълъг текст */
 }
 
 .doneBadge {
@@ -46,6 +54,7 @@
   font-weight: 600;
   padding: 0.25rem 0.6rem;
   border-radius: 20px;
+  white-space: nowrap; /* 💡 Не позволява на текста 'Завършена' да отиде на 2 реда */
 }
 
 .pendingBadge {
@@ -55,4 +64,26 @@
   font-weight: 600;
   padding: 0.25rem 0.6rem;
   border-radius: 20px;
+  white-space: nowrap; /* 💡 Запазва значката цяла */
+}
+
+/* 📱 Адаптация за телефони и по-малки екрани */
+@media (max-width: 768px) {
+  .dashboard {
+    padding: 1rem; /* По-малко разстояние от краищата на мобилен екран */
+  }
+
+  .recentSection {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    border-radius: 12px;
+  }
+
+  .recentItem {
+    padding: 0.75rem;
+  }
+
+  .taskTitle {
+    font-size: 0.95rem;
+  }
 }
