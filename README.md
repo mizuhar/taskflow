@@ -1,16 +1,39 @@
-# React + Vite
+# 🚀 TaskFlow - Modern Task Management PWA
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+TaskFlow is a responsive, high-performance Task Management Progressive Web Application (PWA) built with **React**, **Firebase**, and modern Web APIs. It features real-time data persistence, secure user authentication, optimized mobile UI/UX, and PWA capabilities allowing installation directly onto desktop and iOS/Android devices.
 
-Currently, two official plugins are available:
+🔗 **Live Demo:** [https://taskflow-21824.web.app](https://taskflow-21824.web.app)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## ✨ Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- 📱 **Progressive Web App (PWA):** Fully installable on iOS and Android with custom home screen branding and native app behavior.
+- 🔐 **Authentication:** Secure user sign-up and sign-in powered by Firebase Auth.
+- ⚡ **Real-Time Database:** Live synchronization of user tasks and state using Firebase Firestore.
+- 🎨 **Responsive UI/UX:** Styled with CSS Modules for scoped, maintainable styling and seamless adaptation across all screen sizes.
+- 🛠️ **State & Navigation:** Built with React Hooks and React Router for fast single-page app (SPA) performance.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠️ Tech Stack
+
+- **Frontend:** React, JavaScript (ES6+), CSS Modules, HTML5
+- **Backend & Services:** Firebase Authentication, Cloud Firestore
+- **Deployment & Hosting:** Firebase Hosting
+- **Build Tool:** Vite
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+- Node.js (v18 or higher)
+- npm or yarn
+
+### Installation
+
+1. **Clone the repository:**
+   ```bash
+   git clone [https://github.com/YOUR_GITHUB_USERNAME/taskflow.git](https://github.com/YOUR_GITHUB_USERNAME/taskflow.git)
+   cd taskflow

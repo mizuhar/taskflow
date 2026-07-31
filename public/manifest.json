@@ -1,0 +1,21 @@
+{
+  "short_name": "TaskFlow",
+  "name": "TaskFlow - Task Management App",
+  "icons": [
+    {
+      "src": "pwa-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "pwa-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#111827",
+  "theme_color": "#4f46e5",
+  "display": "standalone",
+  "orientation": "portrait"
+}
